@@ -7,15 +7,5 @@
   </a>
 </div>
 
-<a href="<%= photos_path %>" class="back_link">Back to list</a>
+<a href="<%= photos_path %>" class="back_link">Back to Gallery</a>
 
-<% if @upload %>
-  <div class="upload_details">
-    <h2>Upload metadata:</h2>
-    <table>
-      <% @upload.each_pair do |k, v| %>
-        <tr><td><%= k %></td><td><%= v.to_json %></td></tr>
-      <% end %>
-    </table>
-  </div>
-<% end %>    
