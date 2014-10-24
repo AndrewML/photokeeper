@@ -14,8 +14,9 @@
 ActiveRecord::Schema.define(version: 20141023152424) do
 
   create_table "photos", force: true do |t|
-    t.string   "name"
-    t.text     "description"
+    t.string   "title"
+    t.string   "image"
+    t.integer  "bytes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

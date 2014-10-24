@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: andrewml
+  api_key: '652358799349747'
+  api_secret: 7CP2garWoN48iDDFtbEiGhpXMpk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: andrewml
+  api_key: '652358799349747'
+  api_secret: 7CP2garWoN48iDDFtbEiGhpXMpk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: andrewml
+  api_key: '652358799349747'
+  api_secret: 7CP2garWoN48iDDFtbEiGhpXMpk
+  enhance_image_tag: true
+  static_image_support: false
