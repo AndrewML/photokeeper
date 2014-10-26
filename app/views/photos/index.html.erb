@@ -10,18 +10,29 @@
     <p>No photos were added yet.</p>
   <% end %>
   <% thumbs_params = { :format => "jpg", :height => 150, :width => 150, :class => "thumbnail inline" } %>
-  <table>
-  <tr>
+ 	<table>
   <% @photos.each do |photo| %>
-    <td class="photo">
+	<td>
       <h2><%= photo.title %></h2>
       <a href="<%= photo.image.url %>" target="_blank">
         <%= image_tag(photo.image.thumbnail.url, :class => "thumbnail inline") %>
       </a>
-    </td>
+  	</td>
   <% end %>
-  </tr>
-  </table>
+	</table>
+	
 </div>
 
+<div class="cycle-slideshow"
+    data-cycle-timeout="0"
+    data-cycle-prev="#prev"
+    data-cycle-next="#next">
+  <% @photos.each do |photo| %>
+      <%= image_tag(photo.image.url, width: '400', height: '300') %>  
+  <% end %>
+</div>
+<div class="center">
+    <a href=# id="prev">Prev</a> 
+    <a href=# id="next">Next</a>
+</div>
 

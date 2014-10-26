@@ -2,7 +2,7 @@ require 'digest/sha1'
 class PhotosController < ApplicationController
 
   def index
-    @photos = Photo.order("created_at desc").to_a
+    @photos = Photo.where(user_id:current_user.id).order("created_at desc").to_a
   end
 
   def new
@@ -21,17 +21,24 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
+    @photo.user_id = current_user.id
     if !@photo.save
       @error = @photo.errors.full_messages.join('. ')
       return
     end
       @photo.update_attributes(:bytes => @photo.image.metadata['bytes'])
       @upload = @photo.image.metadata
+      
+      redirect_to action: :index
   end
 
   protected 
   def photo_params
     params.require(:photo).permit(:title, :bytes, :image, :image_cache)
+  end
+  
+  def slideshow
+    
   end
   
  end

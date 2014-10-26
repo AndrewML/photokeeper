@@ -1,0 +1,9 @@
+<div id="maximage">
+  <% @photos.each do |photo| %>
+
+      <a href="<%= photo.image.url %>" target="_blank">
+        <%= image_tag(photo.image.thumbnail.url, :class => "thumbnail inline") %>
+      </a>
+  
+  <% end %>
+</div>
